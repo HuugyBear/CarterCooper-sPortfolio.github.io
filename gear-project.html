@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planetary Gear System | Carter Cooper</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #1e40af);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="fixed w-full z-10 bg-white/80 backdrop-blur-sm shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                <a href="index.html" class="text-xl font-bold gradient-text">Carter Cooper</a>
+</div>
+                <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html#home" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                <a href="index.html#work" class="text-gray-700 hover:text-indigo-600 transition">Work</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-indigo-600 transition">About</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
+</div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4">Planetary Gear System</h1>
+                <p class="text-gray-500">Engineered a compact planetary gear system with optimized gear ratios</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-12">
+                <img src="https://huggingface.co/spaces/HuugyBear/pixelfizz-portfolio-sparkles/resolve/main/images/Screenshot%202024-12-11%20111638.png" alt="Planetary Gear System" class="w-full h-auto">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-semibold mb-2 flex items-center">
+                        <i data-feather="tool" class="w-5 h-5 text-blue-600 mr-2"></i>
+                        Tools Used
+                    </h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Fusion 360</li>
+                        <li>Arduino</li>
+                        <li>3D Printing</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-semibold mb-2 flex items-center">
+                        <i data-feather="calendar" class="w-5 h-5 text-blue-600 mr-2"></i>
+                        Project Timeline
+                    </h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Duration: 2 months</li>
+                        <li>Completed: August 2022</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-semibold mb-2 flex items-center">
+                        <i data-feather="award" class="w-5 h-5 text-blue-600 mr-2"></i>
+                        Key Features
+                    </h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Compact design</li>
+                        <li>Optimized gear ratios</li>
+                        <li>Integrated control system</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Project Overview</h2>
+                <p class="text-gray-600 mb-4">This project involved designing and building a compact planetary gear system capable of handling high torque loads while maintaining precise control over output speed.</p>
+                <p class="text-gray-600 mb-4">Using Fusion 360, I modeled the gear train and performed stress analysis to optimize tooth profiles and material selection. The system was prototyped using 3D printing for rapid iteration, with the final version featuring bronze alloy gears for durability.</p>
+                <p class="text-gray-600">An Arduino-based control system was integrated to monitor performance and adjust input speed dynamically. The completed system demonstrated a 90% efficiency rating in load tests.</p>
+            </div>
+
+            <div class="text-center">
+                <a href="projects.html" class="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
+<i data-feather="arrow-left" class="mr-2"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>feather.replace();</script>
+</body>
+</html>

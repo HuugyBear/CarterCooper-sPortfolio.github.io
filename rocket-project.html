@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Photometric Stereo Scanner — Mechatronic System Design | Carter Cooper</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #1e40af);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="fixed w-full z-10 bg-white/80 backdrop-blur-sm shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold gradient-text">Carter Cooper</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                    <a href="index.html#work" class="text-gray-700 hover:text-indigo-600 transition">Work</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-indigo-600 transition">About</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4">Automated Photometric Stereo Scanner — Mechatronic System Design</h1>
+                <p class="text-gray-500">Designed and built a mechatronic system that integrate hardware, embedded control, and software under real-world constraints.</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-12">
+                <img src="https://huggingface.co/spaces/CarterCooper/Carter-Cooper-Portfolio/resolve/main/images/IMG_8569.jpeg" alt="Automated Photometric Stereo Scanner" class="w-full h-96 object-cover">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-semibold mb-2 flex items-center">
+                        <i data-feather="tool" class="w-5 h-5 text-blue-600 mr-2"></i>
+                        Tools Used
+                    </h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Arduino (C++ / PlatformIO)</li>
+                        <li>Stepper Drivers & Motors</li>
+                        <li>MOSFET & Relay Modules</li>
+                        <li>VS Code</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-semibold mb-2 flex items-center">
+                        <i data-feather="calendar" class="w-5 h-5 text-blue-600 mr-2"></i>
+                        Project Timeline
+                    </h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Duration: ~1.5-week focused engineering sprint</li>
+                        <li>Completed: December 2025</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-semibold mb-2 flex items-center">
+                        <i data-feather="award" class="w-5 h-5 text-blue-600 mr-2"></i>
+                        Key Features
+                    </h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Non-blocking finite state machine control</li>
+                        <li>Automated motion–lighting–capture sequencing</li>
+                        <li>Modular, fully documented system for handoff</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Abstract -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Abstract</h2>
+                <p class="text-gray-600">
+                    This project involved the design and implementation of an automated control system intended to support photometric stereo scanning under real-world time constraints. Over a focused 1.5-week engineering sprint, I developed a modular mechatronic architecture integrating stepper motor–driven camera motion, synchronized LED lighting, camera triggering, and non-blocking embedded firmware. The system emphasizes deterministic timing, safe power switching, and a clear separation between hardware-specific code and core control logic to enable extensibility and reliable handoff. While the full imaging pipeline was outside the available timeline, the resulting system provides a validated foundation for continued development and has been proposed for continuation as a senior capstone project.
+                </p>
+            </div>
+
+            <!-- Hero / One-liner -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Project Overview</h2>
+                <p class="text-xl font-semibold text-gray-700 mb-6">Designed and implemented an automated photometric stereo scanning system that integrates precise motion control with synchronized lighting and image capture.</p>
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 mb-6">
+                    <p class="text-blue-700">"This project showcases my rapid embedded-systems reskilling to design and implement a modular camera gantry system, complete with control firmware, electrical integration, and a detailed handoff for continuation."</p>
+                </div>
+            </div>
+
+            <!-- Problem & Motivation -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Problem & Motivation</h2>
+                <p class="text-gray-600 mb-4">Photometric stereo requires multiple images under varied lighting to reconstruct 3D surface normals. Existing outsourced processes were slow, costly, and inconsistent, motivating the development of a modular, automated camera gantry to accelerate scans while maintaining accuracy.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <img src="http://static.photos/science/640x360/45" alt="Manual Setup" class="w-full h-64 object-cover rounded-lg mb-4">
+                    </div>
+                    <div>
+                        <p class="text-gray-600">The challenge was to automate this process while maintaining precise synchronization between:</p>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600 mt-4">
+                            <li>LED lighting state changes</li>
+                            <li>Camera triggering</li>
+                            <li>Camera gantry motion</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Role & Ownership / Skill Relearning -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Role & Ownership</h2>
+                <p class="text-gray-600 mb-4">As the sole engineer on this project, I took complete ownership of:</p>
+                <ul class="list-disc pl-5 space-y-2 text-gray-600 mb-6">
+                    <li>System architecture and requirements definition</li>
+                    <li>Electrical design and component selection</li>
+                    <li>Firmware development and testing</li>
+                    <li>Documentation and handoff materials</li>
+                </ul>
+                
+                <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                    <h3 class="font-semibold text-yellow-700 mb-2">Skill Relearning Challenge</h3>
+                    <p class="text-yellow-700">While I had prior coursework in mechatronics, several years had passed since that formal training. I independently re-established proficiency in:</p>
+                    <ul class="list-disc pl-5 space-y-1 text-yellow-700 mt-2">
+                        <li>Stepper motor control and microstepping</li>
+                        <li>MOSFET circuits for high-power LED control</li>
+                        <li>Non-blocking firmware architectures</li>
+                        <li>C++ programming</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- System Architecture -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">System Architecture</h2>
+                <p class="text-gray-600 mb-6">The system was designed for modularity and extensibility, allowing precise coordination of lighting and camera control while enabling future expansion or handoff to another engineer. Hardware and software responsibilities were clearly separated to simplify integration and troubleshooting.</p>
+                <img src="https://huggingface.co/spaces/CarterCooper/Carter-Cooper-Portfolio/resolve/main/images/Screenshot%202025-12-30%20124556.png" alt="System Architecture Diagram" class="w-full h-64 object-cover rounded-lg mb-6" style = "object-position 40% 60%">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Hardware Highlights</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li>MOSFET circuit for isolated 12V LED control, ensuring consistent lighting across captures</li>
+                            <li>Arduino Uno as the central controller, coordinating all subsystems via a structured firmware interface</li>
+                            <li>NEMA 17 Stepper for camera gantry motion components for reproducible camera positioning</li>
+                            <li>Relay module for camera triggering, providing isolated and reliable shutter control</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Firmware Features</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li>Modular finite state machine architecture coordinating camera motion, LED lighting states, and camera triggering with deterministic timing</li>
+                            <li>Non-blocking control loops to manage concurrent tasks without timing conflicts</li>
+                            <li>Abstracted firmware interfaces that separate control logic from hardware-specific I/O, enabling future upgrades or subsystem replacements</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Subsystem Validation -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Subsystem Validation & Incremental Testing</h2>
+                <p class="text-gray-600 mb-6">
+                    Due to the compressed timeline, each subsystem was validated independently before full system integration.
+                    Mock loads, indicator LEDs, and staged wiring were used to verify firmware behavior, electrical safety, and timing
+                    assumptions prior to connecting final hardware.
+                </p>
+
+                <div class="space-y-8">
+                    <!-- Camera Trigger -->
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">LED Control Prototyping (MOSFET Switching)</h3>
+                        <img src="https://huggingface.co/spaces/CarterCooper/Carter-Cooper-Portfolio/resolve/main/images/IMG_856.jpeg" alt="Camera trigger relay testing" class="w-full h-96 object-cover rounded-lg" style="object-position: 20% 40%;">
+
+                        <p class="text-gray-600">
+                            Relay-based camera triggering was tested independently to validate timing, signal isolation,
+                            and repeatable shutter activation before integration with motion and lighting sequences.
+                        </p>
+                    </div>
+
+                    <!-- LED MOSFET -->
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">LED Control Prototyping (MOSFET Switching)</h3>
+                        <img src="https://huggingface.co/spaces/CarterCooper/Carter-Cooper-Portfolio/resolve/main/images/IMG_857.jpeg" alt="MOSFET LED control testing" class="w-full h-96 object-cover rounded-lg" style="object-position: 20% 40%;">
+
+                        <p class="text-gray-600">
+                            High-power LED control was prototyped using MOSFET switching and indicator LEDs to verify safe,
+                            efficient power handling and firmware-controlled lighting transitions.
+                        </p>
+                    </div>
+
+                    <!-- Stepper Driver -->
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Stepper Motor Driver Integration</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <img src="https://huggingface.co/spaces/CarterCooper/Carter-Cooper-Portfolio/resolve/main/images/IMG_8577.jpeg" alt="Stepper motor driver testing" class="w-full h-80 object-cover rounded-lg mb-2" style="object-position: 20% 75%;"> 
+                            </div>
+                            <div>
+                                <img src="https://huggingface.co/spaces/CarterCooper/Carter-Cooper-Portfolio/resolve/main/images/IMG_8579.jpeg" alt="Stepper motor testing closeup" class="w-full h-80 object-cover rounded-lg mb-2" style="object-position: 20% 75%;">
+                            </div>
+                        </div>
+                        <p class="text-gray-600">
+                            Stepper motor control was validated with microstepping and controlled motion tests to ensure
+                            deterministic positioning and reliable synchronization with lighting and camera triggers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Implementation Sprint -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Implementation Sprint</h2>
+                <p class="text-gray-600 mb-4">Completed in a focused 1.5-week engineering sprint at the ending of my internship, with key milestones:</p>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">1</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Project & Requirements (Day 1–2)</h3>
+                            <p class="text-gray-600">Reviewed prior attempts, studied relevant mechatronics concepts, and defined system requirements.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">2</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Early Coding & Simulation (Day 3–4)</h3>
+                            <p class="text-gray-600">Began firmware development while awaiting hardware, using simulated inputs to validate control logic.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">3</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Circuit Prototyping & Mock Integration (Day 5–6)</h3>
+                            <p class="text-gray-600">Designed LED control circuits and used mock components to test code–hardware interactions before full assembly.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">4</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Hardware Assembly & Firmware Finalization (Day 7–10)</h3>
+                            <p class="text-gray-600">Integrated motor drivers, LEDs, and camera triggers; finalized firmware with precise synchronization and tested full system functionality.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">5</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Documentation & Handoff Preparation (Final Day)</h3>
+                            <p class="text-gray-600">Created detailed wiring diagrams, firmware explanations, and usage notes to enable continuation by future interns or engineers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Achievements -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Key Achievements</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold flex items-center mb-2">
+                            <i data-feather="cpu" class="w-5 h-5 text-blue-600 mr-2"></i>
+                            Robust Control System
+                        </h3>
+                        <p class="text-gray-600">Implemented a non-blocking finite state machine that maintains precise timing while remaining responsive to user input.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold flex items-center mb-2">
+                            <i data-feather="zap" class="w-5 h-5 text-blue-600 mr-2"></i>
+                            Efficient Power Management
+                        </h3>
+                        <p class="text-gray-600">Utilized a MOSFET circuit to switch 12V LED arrays reliably, ensuring safe, efficient, and precise control of lighting states.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold flex items-center mb-2">
+                            <i data-feather="code" class="w-5 h-5 text-blue-600 mr-2"></i>
+                            Clean Architecture
+                        </h3>
+                        <p class="text-gray-600">Created modular firmware that separates core control logic from hardware-specific code, making the system adaptable to future component changes.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold flex items-center mb-2">
+                            <i data-feather="book" class="w-5 h-5 text-blue-600 mr-2"></i>
+                            Comprehensive Documentation
+                        </h3>
+                        <p class="text-gray-600">Produced detailed documentation covering electrical schematics, API usage, and future work suggestions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Handoff & Continuity -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Handoff & Continuity</h2>
+                <p class="text-gray-600 mb-4">Despite the tight timeline, I prioritized creating documentation that would allow another engineer to understand, validate, and extend the system with minimal ramp-up time.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <img src="https://huggingface.co/spaces/CarterCooper/Carter-Cooper-Portfolio/resolve/main/images/Screenshot%202025-12-30%20123231.png" alt="Documentation Screenshot" class="w-full rounded-lg">
+<p class="text-center text-sm text-gray-500 mt-2">Excerpt from the handoff documentation</p>
+                    </div>
+                    <div>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li>Complete wiring diagrams with labeled pin assignments and power routing
+                            </li>
+
+                            <li>Firmware structure overview with usage examples for key control modules</li>
+
+                            <li>Known limitations, edge cases, and suggested improvements</li>
+                            <li>Bill of materials with part specifications and sourcing information</li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href="https://docs.google.com/presentation/d/1cHN0_cNSIaAwLf_dFtu3r9Z9Oc_qUNLSx2eMeR0pRs8/edit?usp=sharing" target="_blank" 
+                               class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                                <i data-feather="file-text" class="mr-2"></i> View Handoff Documentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+<div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                    <p class="text-green-700">These materials were designed to support long-term continuity rather than a one-off demonstration. As a result, the project has been proposed for continuation as a senior capstone, with the system architecture, firmware structure, and documentation serving as the foundation for future development.</p>
+                </div>
+            </div>
+
+            <!-- Outcome & Future Work -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Outcome & Future Work</h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Outcome</h3>
+                        <p class="text-gray-600">Within a 1.5-week sprint, I delivered a fully functional and extensible control system that reliably coordinates motion and lighting with deterministic timing. The final system validates the core architecture required for automated photometric stereo scanning and is stable enough to serve as a foundation for continued development.</p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600 mt-2">
+                            <li>Deterministic, microstepped motor control enabling repeatable camera positioning and synchronized image capture</li>
+
+                            <li>Precisely synchronized LED lighting sequences driven by a non-blocking control loop</li>
+
+                            <li>A modular firmware and wiring architecture designed for rapid extension and handoff</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold text-lg mb-2">Next Steps</h3>
+                        <p class="text-gray-600">With the core control system validated, future development could include:</p>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-600 mt-2">
+                            <li>Integration of camera triggering and exposure synchronization</li>
+
+                            <li>Implementation of the photometric stereo reconstruction pipeline</li>
+
+                            <li>Mechanical enclosure and production-ready assembly</li>
+
+                            <li>Web-based interface for remote control, monitoring, and data capture</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <p class="text-blue-700">This project demonstrates my ability to rapidly re-establish proficiency in embedded and mechatronic systems and deliver a robust, continuation-ready engineering solution under tight real-world constraints.</p>
+                    </div>
+                </div>
+            </div>
+<div class="text-center">
+                <a href="projects.html" class="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
+                    <i data-feather="arrow-left" class="mr-2"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>feather.replace();</script>
+</body>
+</html>
