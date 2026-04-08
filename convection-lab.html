@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convection Heat Transfer Lab — Carter Cooper</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #1e40af);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .image-placeholder {
+            background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+            border: 2px dashed #6366f1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #6366f1;
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- NAV -->
+    <nav class="fixed w-full z-10 bg-white/80 backdrop-blur-sm shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold gradient-text">Carter Cooper</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                    <a href="index.html#work" class="text-gray-700 hover:text-indigo-600 transition">Work</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-indigo-600 transition">About</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 pb-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- HEADER -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4">Convective Heat Transfer &amp; Nusselt Number Analysis</h1>
+                <p class="text-gray-500">Experimentally characterized forced convection from aluminum cylinders in a wind tunnel, developed a custom empirical correlation, and benchmarked it against established theoretical models.</p>
+            </div>
+
+            <!-- HERO IMAGE — replace src with your actual image -->
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-12">
+                <div class="image-placeholder w-full h-72 rounded-xl">
+                    <i data-feather="image" class="w-10 h-10 mb-2 opacity-50"></i>
+                    <span class="font-medium">Upload a hero image here</span>
+                    <span class="text-xs opacity-70 mt-1">(e.g. wind tunnel setup or cylinder photo)</span>
+                </div>
+            </div>
+
+            <!-- CARDS ROW -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-semibold mb-2 flex items-center">
+                        <i data-feather="tool" class="w-5 h-5 text-blue-600 mr-2"></i>
+                        Tools Used
+                    </h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Python (NumPy, SciPy, Matplotlib)</li>
+                        <li>Lumped Capacitance Analysis</li>
+                        <li>Power-Law Regression</li>
+                        <li>Wind Tunnel &amp; Thermocouple DAQ</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-semibold mb-2 flex items-center">
+                        <i data-feather="calendar" class="w-5 h-5 text-blue-600 mr-2"></i>
+                        Project Timeline
+                    </h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Course: ME 423 Heat Transfer</li>
+                        <li>Completed: March 2026</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-sm">
+                    <h3 class="font-semibold mb-2 flex items-center">
+                        <i data-feather="award" class="w-5 h-5 text-blue-600 mr-2"></i>
+                        Key Features
+                    </h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Custom Nu–Re power-law correlation</li>
+                        <li>Multi-diameter cylinder comparison</li>
+                        <li>Systematic uncertainty propagation</li>
+                        <li>Benchmark vs. Churchill &amp; Hilpert</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- PROJECT OVERVIEW -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Project Overview</h2>
+                <p class="text-xl font-semibold text-gray-700 mb-6">Measured convective heat transfer coefficients and Nusselt numbers for three aluminum cylinder diameters across a wide range of Reynolds numbers, then fit a custom empirical correlation to the data.</p>
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500 mb-6">
+                    <p class="text-blue-700">"The custom curve-fit (Nu = 0.590·Re⁰·⁵⁴⁰·Pr¹/³) achieved an R² of 0.994 and an average error of 3.1% — compared to 28.5% and 32.0% for the Churchill-Bernstein and Hilpert correlations, respectively — demonstrating the value of site-specific empirical calibration."</p>
+                </div>
+                <p class="text-gray-600">This experiment studies forced convection from cylinders in crossflow, a configuration common in heat exchangers, electronics cooling, and structural thermal analysis. By testing three diameters (12.72 mm, 17.15 mm, and 19.12 mm) across velocities from 2 to 40 m/s, the experiment isolates the effects of both geometry and flow speed on heat transfer performance.</p>
+            </div>
+
+            <!-- EXPERIMENTAL SETUP -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Experimental Setup</h2>
+                <p class="text-gray-600 mb-6">Each aluminum cylinder was pre-heated using hot packs to above 50°C, then quickly placed into a wind tunnel test stand. A centerline thermocouple recorded temperature as the cylinder cooled, and the elapsed time to drop from 40°C to 32°C was measured for each velocity and diameter combination. Atmospheric pressure was logged at each run to correct air density and kinematic viscosity.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <!-- Replace with your actual setup photo -->
+                        <div class="image-placeholder w-full h-64 rounded-lg">
+                            <i data-feather="image" class="w-8 h-8 mb-2 opacity-50"></i>
+                            <span class="font-medium">Wind tunnel / test stand photo</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg mb-3">Equipment</h3>
+                        <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                            <li>Aluminum cylinders: Ø 12.72, 17.15, 19.12 mm (L ≈ 113–115 mm)</li>
+                            <li>Centerline thermocouple + data logger</li>
+                            <li>Wind tunnel with LabVIEW velocity control (2–40 m/s)</li>
+                            <li>Barometer for atmospheric pressure correction</li>
+                            <li>Hot packs for pre-heating to ~55–60°C</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                    <h3 class="font-semibold text-yellow-700 mb-2">Atmospheric Pressure Correction</h3>
+                    <p class="text-yellow-700">The lab is located at elevation, with measured pressures around 84.4–85.3 kPa — well below sea level. This directly shifts air density and kinematic viscosity, which in turn shifts the calculated Reynolds numbers. Ignoring this correction would introduce systematic error in all correlation comparisons.</p>
+                </div>
+            </div>
+
+            <!-- ANALYSIS -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Analysis Approach</h2>
+                <p class="text-gray-600 mb-6">All calculations were performed in Python using numpy and scipy. Air properties were interpolated at the film temperature for each data point, then corrected for local atmospheric pressure.</p>
+
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">1</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Heat Transfer Coefficient</h3>
+                            <p class="text-gray-600">Applied the lumped capacitance model to extract h from the measured cooling interval, including end-cap area contributions. Biot number verified to be &lt; 0.1 for all cases, confirming the approximation is valid.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">2</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Reynolds &amp; Nusselt Numbers</h3>
+                            <p class="text-gray-600">Re was computed using pressure-corrected kinematic viscosity at the film temperature. Nu was derived from h, cylinder diameter, and air thermal conductivity.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">3</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Uncertainty Propagation</h3>
+                            <p class="text-gray-600">Uncertainty in h was propagated analytically from measurement uncertainties in diameter (±0.1 mm), cooling time (±0.5 s), and temperature (±0.2°C). Nu uncertainty scaled accordingly, with diameter uncertainty doubled due to its squared dependence.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">4</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Power-Law Curve Fit</h3>
+                            <p class="text-gray-600">Log-log linear regression across all diameters and velocities yielded a single best-fit correlation of the form Nu = C·Re<sup>m</sup>·Pr<sup>1/3</sup>, with C and m extracted after removing Pr dependence.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">5</span>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Correlation Benchmarking</h3>
+                            <p class="text-gray-600">Churchill-Bernstein and Hilpert predictions were computed for each data point and compared against experimental Nu values, with percent errors reported at each condition and averaged across all runs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESULTS -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Results</h2>
+
+                <!-- Figure 1 -->
+                <div class="mb-10">
+                    <h3 class="font-semibold text-lg mb-3">Figure 1 — Heat Transfer Coefficient vs. Air Velocity</h3>
+                    <!-- Replace with your actual exported plot image -->
+                    <div class="image-placeholder w-full h-80 rounded-lg mb-3">
+                        <i data-feather="bar-chart-2" class="w-10 h-10 mb-2 opacity-50"></i>
+                        <span class="font-medium">Upload Figure 1 here</span>
+                        <span class="text-xs opacity-70 mt-1">h vs. Velocity plot (all 3 diameters, with error bars)</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">The heat transfer coefficient increases non-linearly with air velocity across all three diameters, consistent with forced convection theory. Smaller diameter cylinders show consistently higher h values, a consequence of thinner thermal boundary layers and larger surface-area-to-volume ratios. Error bars — primarily driven by timing uncertainty — remain proportionally constant across the velocity range, confirming that the trends are statistically meaningful and not artifacts of measurement noise.</p>
+                </div>
+
+                <!-- Figure 2 -->
+                <div class="mb-10">
+                    <h3 class="font-semibold text-lg mb-3">Figure 2 — Nusselt vs. Reynolds Number with Custom Curve-Fit</h3>
+                    <div class="image-placeholder w-full h-80 rounded-lg mb-3">
+                        <i data-feather="trending-up" class="w-10 h-10 mb-2 opacity-50"></i>
+                        <span class="font-medium">Upload Figure 2 here</span>
+                        <span class="text-xs opacity-70 mt-1">Nu vs. Re (log scale) with power-law curve-fit line</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Experimental Nusselt numbers plotted against Reynolds number collapse tightly onto a single power-law curve across all three cylinder diameters, demonstrating that geometry-normalized scaling captures the dominant physics. The best-fit correlation Nu = 0.590·Re<sup>0.540</sup>·Pr<sup>1/3</sup> achieves an R² of 0.994, with an average error of 3.1% and a maximum of 7.8%. The tight fit across a 10× range of Reynolds numbers validates the lumped-capacitance approach and confirms that this custom correlation is well-suited to these specific test conditions.</p>
+                </div>
+
+                <!-- Figure 3 -->
+                <div class="mb-10">
+                    <h3 class="font-semibold text-lg mb-3">Figure 3 — Comparison with Churchill-Bernstein &amp; Hilpert Correlations</h3>
+                    <div class="image-placeholder w-full h-80 rounded-lg mb-3">
+                        <i data-feather="activity" class="w-10 h-10 mb-2 opacity-50"></i>
+                        <span class="font-medium">Upload Figure 3 here</span>
+                        <span class="text-xs opacity-70 mt-1">Nu vs. Re with Churchill-Bernstein and Hilpert lines</span>
+                    </div>
+                    <p class="text-gray-600 text-sm">Both standard correlations systematically underpredict the experimental Nusselt numbers across the full Reynolds number range, with average errors of 28.5% (Churchill-Bernstein) and 32.0% (Hilpert). The discrepancy is most pronounced at lower velocities and remains proportional as Reynolds number increases, suggesting a consistent offset rather than a modeling breakdown at specific flow regimes. The likely cause is elevated turbulence intensity in the wind tunnel and finite end-effects on the cylinders — neither of which are captured in the idealized "infinite cylinder in uniform crossflow" assumptions underlying both correlations. This reinforces the importance of empirical calibration when precision is required.</p>
+                </div>
+
+                <!-- Comparison Table -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-3">Table 1 — Nusselt Number Comparison at Extreme Error Cases</h3>
+                    <div class="overflow-x-auto rounded-lg border border-gray-200">
+                        <table class="w-full text-sm">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-600">Velocity</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-600">Nu (Exp)</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-600">Nu (Churchill)</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-600">Nu (Hilpert)</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-600">Nu (Curve-fit)</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-600">Churchill Err</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-600">Hilpert Err</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="bg-white">
+                                    <td class="px-4 py-3 text-gray-700">6.18 m/s (High Err)</td>
+                                    <td class="px-4 py-3 text-gray-700">64.06</td>
+                                    <td class="px-4 py-3 text-gray-700">41.41</td>
+                                    <td class="px-4 py-3 text-gray-700">38.10</td>
+                                    <td class="px-4 py-3 text-gray-700">58.94</td>
+                                    <td class="px-4 py-3 font-semibold text-red-600">−35.4%</td>
+                                    <td class="px-4 py-3 font-semibold text-red-600">−40.5%</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="px-4 py-3 text-gray-700">35.05 m/s (Low Err)</td>
+                                    <td class="px-4 py-3 text-gray-700">145.94</td>
+                                    <td class="px-4 py-3 text-gray-700">111.28</td>
+                                    <td class="px-4 py-3 text-gray-700">111.65</td>
+                                    <td class="px-4 py-3 text-gray-700">149.56</td>
+                                    <td class="px-4 py-3 font-semibold text-red-600">−23.8%</td>
+                                    <td class="px-4 py-3 font-semibold text-red-600">−23.5%</td>
+                                </tr>
+                            </tbody>
+                            <tfoot class="bg-blue-50">
+                                <tr>
+                                    <td colspan="5" class="px-4 py-3 font-semibold text-gray-700">Average Absolute Error (all data)</td>
+                                    <td class="px-4 py-3 font-bold text-red-600">28.5%</td>
+                                    <td class="px-4 py-3 font-bold text-red-600">32.0%</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="px-4 py-2 text-xs text-gray-500 italic">Custom curve-fit average error across all data points:</td>
+                                    <td colspan="3" class="px-4 py-2 font-bold text-green-600">3.1%</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KEY ACHIEVEMENTS -->
+            <div class="bg-white p-8 rounded-xl shadow-sm mb-12">
+                <h2 class="text-2xl font-bold mb-4 gradient-text">Key Achievements</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold flex items-center mb-2">
+                            <i data-feather="trending-up" class="w-5 h-5 text-blue-600 mr-2"></i>
+                            High-Accuracy Empirical Correlation
+                        </h3>
+                        <p class="text-gray-600">Derived a power-law Nu–Re correlation with R² = 0.994 and 3.1% average error, substantially outperforming standard textbook models for this test setup.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold flex items-center mb-2">
+                            <i data-feather="sliders" class="w-5 h-5 text-blue-600 mr-2"></i>
+                            Full Uncertainty Analysis
+                        </h3>
+                        <p class="text-gray-600">Analytically propagated measurement uncertainties through every calculated quantity, providing statistically meaningful error bars on all 42 data points.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold flex items-center mb-2">
+                            <i data-feather="code" class="w-5 h-5 text-blue-600 mr-2"></i>
+                            End-to-End Python Analysis
+                        </h3>
+                        <p class="text-gray-600">Built a complete data pipeline in Python — from raw thermocouple readings through air property interpolation, pressure correction, regression, and publication-quality plots.</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="font-semibold flex items-center mb-2">
+                            <i data-feather="alert-circle" class="w-5 h-5 text-blue-600 mr-2"></i>
+                            Correlation Gap Identified
+                        </h3>
+                        <p class="text-gray-600">Quantified a consistent 28–32% underprediction by Churchill-Bernstein and Hilpert models, attributable to wind tunnel turbulence and finite end effects not captured in idealized formulations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BACK LINK -->
+            <div class="text-center">
+                <a href="projects.html" class="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition">
+                    <i data-feather="arrow-left" class="mr-2"></i> Back to Projects
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <script>feather.replace();</script>
+</body>
+</html>
